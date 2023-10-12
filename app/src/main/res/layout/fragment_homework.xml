@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="16dp"
+    tools:context=".ui.home.homework.HomeworkFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="@string/homework"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_homework"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="true"
+        android:scrollbarSize="6dp"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbarThumbHorizontal="@drawable/timer_background"
+        android:scrollbars="horizontal"
+        tools:listitem="@layout/item_lesson" />
+
+</LinearLayout>

@@ -28,4 +28,15 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/shadow" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/homework_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shadow" />
+
 </LinearLayout>

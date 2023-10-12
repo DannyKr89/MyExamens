@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myexamens.R
 import com.example.myexamens.databinding.FragmentHomeBinding
+import com.example.myexamens.ui.home.homework.HomeworkFragment
 import com.example.myexamens.ui.home.lessonsOfDay.LessonsOfDayFragment
 import com.example.myexamens.ui.home.timer.TimerFragment
 
@@ -35,6 +36,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         childFragmentManager
             .beginTransaction()
             .replace(R.id.lessons_of_day_container, LessonsOfDayFragment())
+            .commit()
+
+        childFragmentManager
+            .beginTransaction()
+            .replace(R.id.homework_container, HomeworkFragment())
             .commit()
 
     }
