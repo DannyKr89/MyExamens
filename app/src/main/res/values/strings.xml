@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Examens</string>
+    <string name="home">Home</string>
+    <string name="exams">Exams</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="until_exams">До экзаменов осталось:</string>
 </resources>
