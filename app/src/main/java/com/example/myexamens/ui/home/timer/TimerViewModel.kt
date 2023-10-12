@@ -1,6 +1,7 @@
 package com.example.myexamens.ui.home.timer
 
 import android.os.CountDownTimer
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myexamens.domain.IExamsTimer
@@ -9,12 +10,11 @@ import java.util.Calendar
 class TimerViewModel(private val repository: IExamsTimer) : ViewModel() {
 
     private val _livedata: MutableLiveData<String> = MutableLiveData<String>()
+    val livedata: LiveData<String> = _livedata
 
     init {
         getExamsTimer()
     }
-
-    fun getLiveData() = _livedata
 
     private fun getExamsTimer() {
         val currentTime = Calendar.getInstance()
@@ -30,7 +30,8 @@ class TimerViewModel(private val repository: IExamsTimer) : ViewModel() {
                     val minutes = ((millisUntillFinish / 1000) % 3600) / 60
                     val hours = (millisUntillFinish / 1000) / 3600 % 24
                     val days = (millisUntillFinish / 1000) / 86400
-                    val result = String.format("%d д. %02d:%02d:%02d",days, hours, minutes, seconds)
+                    val result =
+                        String.format("%d д. %02d:%02d:%02d", days, hours, minutes, seconds)
                     _livedata.postValue(result)
                 }
 
