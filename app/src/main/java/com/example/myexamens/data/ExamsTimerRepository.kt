@@ -9,8 +9,8 @@ class ExamsTimerRepository : IExamsTimer {
         val examsDate: Calendar = Calendar.getInstance()
         examsDate.apply {
             set(Calendar.YEAR, 2023)
-            set(Calendar.MONTH, Calendar.OCTOBER)
-            set(Calendar.DAY_OF_MONTH, 25)
+            set(Calendar.MONTH, Calendar.DECEMBER)
+            set(Calendar.DAY_OF_MONTH, 20)
             set(Calendar.HOUR_OF_DAY, 18)
             set(Calendar.MINUTE, 0)
         }
