@@ -9,8 +9,8 @@ import java.util.Calendar
 
 class TimerViewModel(private val repository: IExamsTimer) : ViewModel() {
 
-    private val _livedata: MutableLiveData<String> = MutableLiveData<String>()
-    val livedata: LiveData<String> = _livedata
+    private val _livedata: MutableLiveData<List<String>> = MutableLiveData<List<String>>()
+    val livedata: LiveData<List<String>> = _livedata
 
     init {
         getExamsTimer()
@@ -19,28 +19,32 @@ class TimerViewModel(private val repository: IExamsTimer) : ViewModel() {
     private fun getExamsTimer() {
         val currentTime = Calendar.getInstance()
 
-        _livedata.postValue("00:00:00")
-
         val countDownTimer = repository.getTimeInMillis() - currentTime.timeInMillis
 
         if (countDownTimer > 0) {
             object : CountDownTimer(countDownTimer, 1000) {
                 override fun onTick(millisUntillFinish: Long) {
-                    val seconds = (millisUntillFinish / 1000) % 60
                     val minutes = ((millisUntillFinish / 1000) % 3600) / 60
                     val hours = (millisUntillFinish / 1000) / 3600 % 24
                     val days = (millisUntillFinish / 1000) / 86400
-                    val result =
-                        String.format("%d д. %02d:%02d:%02d", days, hours, minutes, seconds)
+
+                    val result = listOf(
+                        (days / 10).toInt().toString(),
+                        (days % 10).toString(),
+                        (hours / 10).toInt().toString(),
+                        (hours % 10).toString(),
+                        (minutes / 10).toInt().toString(),
+                        (minutes % 10).toString()
+                    )
                     _livedata.postValue(result)
                 }
 
                 override fun onFinish() {
-                    _livedata.postValue("Началось!")
+                    _livedata.postValue(listOf("Началось!"))
                 }
             }.start()
         } else {
-            _livedata.postValue("АЛАРМ!!Они уже идут!!!")
+            _livedata.postValue(listOf("АЛАРМ!!Они уже идут!!!"))
         }
     }
 

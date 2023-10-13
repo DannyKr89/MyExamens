@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myexamens.data.model.Lesson
 import com.example.myexamens.domain.ILessonsOfDay
-import java.util.Calendar
 
 class LessonsOfDayViewModel(private val repository: ILessonsOfDay) : ViewModel() {
 
@@ -26,7 +25,6 @@ class LessonsOfDayViewModel(private val repository: ILessonsOfDay) : ViewModel()
     }
 
     private fun scrollToLesson() {
-        val currentHour = Calendar.getInstance()[Calendar.HOUR_OF_DAY]
-        _currentLessonLivedata.postValue(repository.getCurrentLessons(currentHour))
+        _currentLessonLivedata.postValue(repository.getCurrentLessons())
     }
 }

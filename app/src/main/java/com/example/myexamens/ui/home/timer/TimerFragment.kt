@@ -18,7 +18,14 @@ class TimerFragment : Fragment(R.layout.fragment_timer) {
         _binding = FragmentTimerBinding.bind(view)
 
         viewModel.livedata.observe(viewLifecycleOwner) {
-            binding.timer.text = it
+            binding.apply {
+                timerDaysFirst.text = it[0]
+                timerDaysSecond.text = it[1]
+                timerHoursFirst.text = it[2]
+                timerHoursSecond.text = it[3]
+                timerMinuteFirst.text = it[4]
+                timerMinuteSecond.text = it[5]
+            }
         }
     }
 

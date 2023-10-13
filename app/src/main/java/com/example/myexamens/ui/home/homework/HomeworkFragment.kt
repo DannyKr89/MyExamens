@@ -25,7 +25,7 @@ class HomeworkFragment : Fragment(R.layout.fragment_homework) {
 
     private fun initViewModel() {
         viewModel.homeworkLivedata.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+            adapter.submitList(it.sortedBy { it.deadline })
         }
     }
 

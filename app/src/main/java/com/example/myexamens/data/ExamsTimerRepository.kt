@@ -1,19 +1,11 @@
 package com.example.myexamens.data
 
+import com.example.myexamens.data.dataSource.DataSource
 import com.example.myexamens.domain.IExamsTimer
-import java.util.Calendar
 
-class ExamsTimerRepository : IExamsTimer {
+class ExamsTimerRepository(private val dataSource: DataSource) : IExamsTimer {
 
     override fun getTimeInMillis(): Long {
-        val examsDate: Calendar = Calendar.getInstance()
-        examsDate.apply {
-            set(Calendar.YEAR, 2023)
-            set(Calendar.MONTH, Calendar.DECEMBER)
-            set(Calendar.DAY_OF_MONTH, 20)
-            set(Calendar.HOUR_OF_DAY, 18)
-            set(Calendar.MINUTE, 0)
-        }
-        return examsDate.timeInMillis
+        return dataSource.getTimeBeforeExams().timeInMillis
     }
 }

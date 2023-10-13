@@ -11,8 +11,18 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/exams_fragment"
-        android:name="com.example.myexamens.ui.exams.ExamsFragment"
-        android:label="fragment_exams"
-        tools:layout="@layout/fragment_exams" />
+        android:id="@+id/lessons_fragment"
+        android:name="com.example.myexamens.ui.lessons.LessonsFragment"
+        android:label="fragment_lessons"
+        tools:layout="@layout/fragment_lessons" />
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.example.myexamens.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/favorite_fragment"
+        android:name="com.example.myexamens.ui.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>

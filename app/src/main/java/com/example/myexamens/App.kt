@@ -1,6 +1,7 @@
 package com.example.myexamens
 
 import android.app.Application
+import com.example.myexamens.di.appModule
 import com.example.myexamens.di.homeworksModule
 import com.example.myexamens.di.lessonsOfDayModule
 import com.example.myexamens.di.timerModule
@@ -16,7 +17,7 @@ class App : Application() {
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@App)
-            modules(listOf(timerModule, lessonsOfDayModule, homeworksModule))
+            modules(listOf(appModule, timerModule, lessonsOfDayModule, homeworksModule))
         }
     }
 }

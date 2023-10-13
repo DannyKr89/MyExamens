@@ -2,6 +2,7 @@ package com.example.myexamens.ui.home.lessonsOfDay
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -11,13 +12,26 @@ import com.example.myexamens.databinding.ItemLessonBinding
 class LessonsOfDayAdapter :
     ListAdapter<Lesson, LessonsOfDayAdapter.LessonsOfDayViewHolder>(COMPARATOR) {
 
-    class LessonsOfDayViewHolder(private val binding: ItemLessonBinding) :
+    var listener: ((Lesson) -> Unit)? = null
+
+    inner class LessonsOfDayViewHolder(private val binding: ItemLessonBinding) :
         ViewHolder(binding.root) {
 
         fun bind(lesson: Lesson) {
             binding.apply {
                 lessonTitle.text = lesson.title
-                lessonTime.text = String.format("%02d:%02d", lesson.timeHours, lesson.timeMinutes)
+                lessonTime.text = String.format(
+                    "%02d:%02d - %02d:%02d",
+                    lesson.timeStartHours,
+                    lesson.timeStartMinutes,
+                    lesson.timeEndHours,
+                    lesson.timeEndMinutes
+                )
+                openIn.isVisible = lesson.isLive
+                openIn.setOnClickListener {
+                    listener?.invoke(lesson)
+                }
+                lesson.image?.let { lessonImage.setImageResource(it) }
             }
         }
     }
