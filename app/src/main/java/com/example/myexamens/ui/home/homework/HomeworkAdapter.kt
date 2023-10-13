@@ -27,22 +27,26 @@ class HomeworkAdapter :
                 val days = TimeUnit.MILLISECONDS.toDays(daysInMillis)
                 when (days) {
                     in 0..2 -> {
-                        homeworkDeadline.setTextColor(Color.rgb(255, 0, 0))
+                        homeworkTime.setTextColor(Color.rgb(255, 0, 0))
+                        ivTime.setColorFilter(Color.rgb(255, 0, 0))
                     }
 
                     in 3..6 -> {
-                        homeworkDeadline.setTextColor(Color.rgb(255, 255, 0))
+                        homeworkTime.setTextColor(Color.rgb(255, 255, 0))
+                        ivTime.setColorFilter(Color.rgb(255, 255, 0))
                     }
 
                     in 7..30 -> {
-                        homeworkDeadline.setTextColor(Color.rgb(0, 255, 0))
+                        homeworkTime.setTextColor(Color.rgb(0, 255, 0))
+                        ivTime.setColorFilter(Color.rgb(0, 255, 0))
                     }
 
                     else -> {
-                        homeworkDeadline.isVisible = false
+                        homeworkTime.isVisible = false
                     }
                 }
-                homeworkDeadline.text = String.format("Осталось %d д.", days)
+                homeworkTime.text = String.format("%d д.", days)
+                homework.image?.let { homeworkImage.setImageResource(it) }
             }
         }
     }

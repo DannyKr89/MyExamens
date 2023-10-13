@@ -5,5 +5,6 @@ import java.util.Calendar
 data class Homework(
     val title: String,
     val description: String,
-    val deadline: Calendar
+    val deadline: Calendar,
+    val image: Int?
 )

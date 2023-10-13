@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/black"
-    android:gravity="center_horizontal"
+    android:layout_marginStart="24dp"
     android:orientation="vertical"
     android:paddingVertical="16dp"
     tools:context=".ui.home.homework.HomeworkFragment">
@@ -12,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
+        android:paddingBottom="4dp"
         android:text="@string/homework"
         android:textColor="@color/white"
         android:textSize="20sp" />
@@ -24,7 +23,7 @@
         android:clipChildren="true"
         android:scrollbarSize="6dp"
         android:scrollbarStyle="outsideInset"
-        android:scrollbarThumbHorizontal="@drawable/timer_background"
+        android:scrollbarThumbHorizontal="@color/surface_color"
         android:scrollbars="horizontal"
         tools:listitem="@layout/item_lesson" />
 
