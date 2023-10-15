@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
     android:orientation="vertical"
     tools:context=".ui.home.lessonsOfDay.LessonsOfDayFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:orientation="horizontal"
         android:paddingBottom="4dp">
@@ -40,11 +40,13 @@
         android:id="@+id/rv_lessons_of_day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipChildren="true"
+        android:clipToPadding="false"
+        android:paddingStart="24dp"
         android:scrollbarSize="6dp"
         android:scrollbarStyle="outsideInset"
         android:scrollbarThumbHorizontal="@color/surface_color"
         android:scrollbars="horizontal"
-        tools:listitem="@layout/item_lesson" />
+        tools:listitem="@layout/item_lesson"
+        tools:ignore="RtlSymmetry" />
 
 </LinearLayout>

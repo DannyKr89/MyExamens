@@ -9,7 +9,7 @@
     <style name="Theme.MyExamens" parent="Base.Theme.MyExamens" />
 
     <style name="BottomCustomIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">#223637</item>
+        <item name="android:color">@color/accent_color</item>
         <item name="android:width">100dp</item>
         <item name="android:height">60dp</item>
         <item name="cornerSize">16dp</item>
