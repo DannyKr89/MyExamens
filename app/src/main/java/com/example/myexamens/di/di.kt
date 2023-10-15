@@ -1,9 +1,9 @@
 package com.example.myexamens.di
 
-import com.example.myexamens.data.ExamsTimerRepository
-import com.example.myexamens.data.HomeworksRepository
-import com.example.myexamens.data.LessonsOfDayRepository
 import com.example.myexamens.data.dataSource.DataSource
+import com.example.myexamens.data.repository.ExamsTimerRepository
+import com.example.myexamens.data.repository.HomeworksRepository
+import com.example.myexamens.data.repository.LessonsOfDayRepository
 import com.example.myexamens.domain.IExamsTimer
 import com.example.myexamens.domain.IHomeworks
 import com.example.myexamens.domain.ILessonsOfDay
@@ -12,6 +12,8 @@ import com.example.myexamens.ui.home.homework.HomeworkViewModel
 import com.example.myexamens.ui.home.lessonsOfDay.LessonsOfDayAdapter
 import com.example.myexamens.ui.home.lessonsOfDay.LessonsOfDayViewModel
 import com.example.myexamens.ui.home.timer.TimerViewModel
+import com.example.myexamens.ui.lessons.LessonsAdapter
+import com.example.myexamens.ui.lessons.LessonsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -25,9 +27,15 @@ val timerModule = module {
 }
 
 val lessonsOfDayModule = module {
-    single<ILessonsOfDay> { LessonsOfDayRepository(get()) }
     factory { LessonsOfDayAdapter() }
+    single<ILessonsOfDay> { LessonsOfDayRepository(get()) }
     viewModel { LessonsOfDayViewModel(get()) }
+}
+
+val lessonsModule = module {
+    factory { LessonsAdapter() }
+    single<ILessonsOfDay> { LessonsOfDayRepository(get()) }
+    viewModel { LessonsViewModel(get()) }
 }
 
 val homeworksModule = module {

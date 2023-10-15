@@ -30,12 +30,73 @@ class DataSource {
 
     fun getLessons(): List<Lesson> {
         return listOf(
-            Lesson("Математика", 8, 0, 8, 45, false, imagesMap.get("Математика")),
-            Lesson("Русский", 9, 0, 9, 45, false, imagesMap.get("Русский")),
-            Lesson("Физика", 10, 0, 12, 0, false, imagesMap.get("Физика")),
-            Lesson("Химия", 13, 0, 14, 30, false, imagesMap.get("Химия")),
-            Lesson("Физкультура", 15, 0, 17, 0, false, imagesMap.get("Физкультура")),
-            Lesson("Android разработка", 18, 0, 21, 0, false, imagesMap.get("Android разработка")),
+            Lesson(
+                "Урок",
+                "Математика",
+                "Ситникова А.",
+                8,
+                0,
+                8,
+                45,
+                false,
+                imagesMap.get("Математика")
+            ),
+            Lesson(
+                "Урок",
+                "Русский",
+                "Белянин Д.",
+                9,
+                0,
+                9,
+                45,
+                false,
+                imagesMap.get("Русский")
+            ),
+            Lesson(
+                "Урок",
+                "Физика",
+                "Ширяева Л.",
+                10,
+                0,
+                12,
+                0,
+                false,
+                imagesMap.get("Физика")
+            ),
+            Lesson(
+                "Урок",
+                "Химия",
+                "Значко О.",
+                13,
+                0,
+                14,
+                30,
+                false,
+                imagesMap.get("Химия")
+            ),
+            Lesson(
+                "Доп. занятие",
+                "Физкультура",
+                "Забродин К.",
+                15,
+                0,
+                17,
+                0,
+                false,
+                imagesMap.get("Физкультура"),
+                "Подготовка к городским соревнованиям, сдача зачетов."
+            ),
+            Lesson(
+                "Урок",
+                "Android разработка",
+                "Морозов В.",
+                18,
+                0,
+                21,
+                0,
+                false,
+                imagesMap.get("Android разработка")
+            ),
         )
     }
 
@@ -51,21 +112,27 @@ class DataSource {
             Homework("Математика", "Вычеслить функцию", Calendar.getInstance().apply {
                 add(Calendar.DAY_OF_YEAR, (1..30).random())
             }, imagesMap.get("Математика")),
-            Homework("Русский",
+            Homework(
+                "Русский",
                 "Написать сочинение на тему как я провел лето",
                 Calendar.getInstance().apply {
                     add(Calendar.DAY_OF_YEAR, (1..30).random())
-                }, imagesMap.get("Русский")),
-            Homework("Химия",
+                }, imagesMap.get("Русский")
+            ),
+            Homework(
+                "Химия",
                 "Свойства спиртов, альдегидов, кислот, сложных эфиров, фенола",
                 Calendar.getInstance().apply {
                     add(Calendar.DAY_OF_YEAR, (1..30).random())
-                }, imagesMap.get("Химия")),
-            Homework("Физика",
+                }, imagesMap.get("Химия")
+            ),
+            Homework(
+                "Физика",
                 "В таблице представлены данные о положении шарика, прикреплённого к пружине и колеблющегося вдоль горизонтальной оси  в различные моменты времени.",
                 Calendar.getInstance().apply {
                     add(Calendar.DAY_OF_YEAR, (1..30).random())
-                }, imagesMap.get("Физика")),
+                }, imagesMap.get("Физика")
+            ),
             Homework("История", "Выучить стихотворение", Calendar.getInstance().apply {
                 add(Calendar.DAY_OF_YEAR, (1..30).random())
             }, imagesMap.get("История"))

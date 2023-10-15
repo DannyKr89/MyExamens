@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_color">#1C1D21</color>
     <color name="surface_color">#232429</color>
+    <color name="primary_color">#2CCD95</color>
+    <color name="accent_color">#223637</color>
 </resources>

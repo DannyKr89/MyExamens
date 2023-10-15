@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
     android:orientation="vertical"
     android:paddingVertical="16dp"
     tools:context=".ui.home.homework.HomeworkFragment">
@@ -11,6 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:paddingBottom="4dp"
         android:text="@string/homework"
         android:textColor="@color/white"
@@ -20,7 +20,9 @@
         android:id="@+id/rv_homework"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipChildren="true"
+        android:clipToPadding="false"
+        android:paddingStart="24dp"
+        android:paddingEnd="14dp"
         android:scrollbarSize="6dp"
         android:scrollbarStyle="outsideInset"
         android:scrollbarThumbHorizontal="@color/surface_color"

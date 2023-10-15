@@ -1,4 +1,4 @@
-package com.example.myexamens.data
+package com.example.myexamens.data.repository
 
 import com.example.myexamens.data.dataSource.DataSource
 import com.example.myexamens.domain.IExamsTimer

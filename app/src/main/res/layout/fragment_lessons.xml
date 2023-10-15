@@ -6,4 +6,14 @@
     tools:context=".ui.lessons.LessonsFragment">
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_lessons_of_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="true"
+        android:scrollbarSize="6dp"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbarThumbHorizontal="@color/surface_color"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_lessons" />
 </FrameLayout>

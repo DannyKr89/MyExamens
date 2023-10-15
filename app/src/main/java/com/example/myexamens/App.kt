@@ -3,6 +3,7 @@ package com.example.myexamens
 import android.app.Application
 import com.example.myexamens.di.appModule
 import com.example.myexamens.di.homeworksModule
+import com.example.myexamens.di.lessonsModule
 import com.example.myexamens.di.lessonsOfDayModule
 import com.example.myexamens.di.timerModule
 import org.koin.android.ext.koin.androidContext
@@ -17,7 +18,15 @@ class App : Application() {
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@App)
-            modules(listOf(appModule, timerModule, lessonsOfDayModule, homeworksModule))
+            modules(
+                listOf(
+                    appModule,
+                    timerModule,
+                    lessonsOfDayModule,
+                    homeworksModule,
+                    lessonsModule
+                )
+            )
         }
     }
 }
